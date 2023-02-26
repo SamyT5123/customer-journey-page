@@ -1,0 +1,278 @@
+body {
+	margin:0;
+	background-color: #2c3b47;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+
+/* Back arrow styling */
+
+#back-arrow {
+	font-size:50px;
+	position:absolute;
+	top:45%;
+	left:50px;
+	background-color: rgba(255, 255, 255, 0.2);
+	padding:15px;
+	border-radius: 50%;
+	color:#f2bb05;
+	display:none;
+}
+
+#back-arrow:hover {
+	box-shadow:3px 3px 6px rgba(0, 0, 0, 0.8);
+	cursor:pointer;
+}
+
+
+/* styling for house icon, first section  */
+.fa-house, .fa-people-roof, .fa-stairs {
+	font-size: 3rem;
+}
+
+/* Container that holds everything */
+.outer-container{
+	display:flex;
+	height:100vh;
+	justify-content:center;
+	align-items: center;
+	flex-direction: column;
+	gap:60px;
+	overflow:hidden;
+}
+
+/* Progress bar section */
+
+.progress-bar {
+	display:flex;
+	gap:10px;
+	position:fixed;
+	top:45px;
+	width:98%;
+}
+
+.progress-bar .bar {
+	width:600px;
+	height:5px;
+	background: linear-gradient(to right,#f0f0c9, #b8b804)  ;
+	border-radius: 50px;
+	display:none;
+	max-width: calc(100% / 3);
+}
+
+span {
+	color:#f2bb05;
+}
+
+/* outer container that holds the selections */
+.calculator-container {
+	display:flex;
+	gap:17px;
+}
+
+/* Container for each selection  */
+.house-container, .roof-container, .floor-number {
+	width:220px;
+	height:220px;
+	border: 1px solid black;
+	border-radius: 40px;
+	cursor: pointer;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.roof-container, .floor-number {
+	font-size: 1.5rem;
+}
+
+label {
+	height:100%;
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: -10;
+	cursor: pointer;
+	color:#f2bb05;
+}
+
+/* input section for address */
+
+.address-input {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	display:none;
+}
+
+#search-button {
+	width:200px;
+	color: #bb8f00;
+	font-weight:600;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+#search-button:hover {
+	transform:scale(1.01);
+	cursor: pointer;
+}
+
+
+.address-input input {
+	width:400px;
+	padding:15px;
+	font-size:1.3rem;
+	border-radius:20px;
+	border:none;
+	outline:none;
+}
+
+
+
+/* hover affect and active class for each section */
+
+.house-container:hover, .roof-container:hover, .floor-number:hover{
+box-shadow:6px 6px 12px rgba(0, 0, 0, 0.9);
+}
+
+.roof-container {
+	display:none;
+}
+
+.floor-number {
+	display:none;
+}
+
+.house-container.active, .roof-container:active, .floor-number:active {
+	border:1px solid rgb(192, 192, 0);
+}
+
+.panels {
+	opacity:0.7;
+}
+
+/* button section  */
+
+button{
+	padding:20px;
+	border-radius: 20px;
+	width:250px;
+	border:0;
+	font-size:1.4rem;
+	letter-spacing: 5px;
+	color:#f2bb05;
+	background:rgba(255, 255, 255, 0.2);
+	cursor:pointer;
+	font-weight: 800;
+	/* position:relative;
+	right:325px; */
+}
+
+button:hover {
+	transform: scale(1.01);
+	box-shadow:3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+/* chat bot icon and messenger section  */
+
+#chat-bot-icon{
+	cursor: pointer;
+	border-radius:50%;
+	font-size: 5rem;
+	position:fixed;
+	right:30px;
+	bottom:30px;
+	text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8);
+	z-index:99;
+	transition:0.5s all linear;
+}
+
+#chat-bot-icon.active {
+	height:400px;
+	width:400px;
+}
+
+#messenger-container {
+	position:fixed;
+	bottom:40px;
+	right:60px;
+	height:350px;
+	width:300px;
+	background-color: rgba(129, 129, 130, 0.8);
+	z-index:98;
+	border-radius:30px;
+	display:none;
+	overflow:hidden;
+	padding:20px;
+} 
+
+#messenger-container form {
+	height:100%;
+	width:300px;
+	gap:15px;
+	opacity:0.9;
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding-top:50px;
+	align-items: center;
+	position:relative;
+	
+}
+
+.enter-message {
+	position:absolute;
+	left:5px;
+	top:120px;
+	border:none;
+	outline:none;
+}
+
+
+textarea {
+	border-radius:10px;
+	border:none;
+	outline:none;
+	color:#bb8f00;
+
+}
+
+.name input, .email input {
+	padding:15px;
+	border-radius:10px;
+	border:none;
+	position:absolute;
+	left:5px;
+	top:10px;
+	border:none;
+	outline:none;
+	color:#bb8f00;
+}
+
+.email input{
+	top:65px;
+}
+
+#submit, #close {
+	position:absolute;
+	top:230px;
+	width:50%;
+	height:50px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	font-size:16px;
+}
+#close {
+	top:290px;
+}
+
+#messenger-container.active {
+	display:block;
+}
